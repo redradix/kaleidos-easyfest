@@ -26,6 +26,9 @@
 
         observer.observe(ctaWrapperElement);
 
+        return () => {
+            observer.disconnect()
+        }
     });
 
     /** @type {HTMLDivElement} */
