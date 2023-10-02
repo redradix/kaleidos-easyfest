@@ -1,3 +1,5 @@
+// @ts-check
+
 // eslint-disable-next-line
 const dotenv = require('dotenv');
 dotenv.config();
@@ -10,6 +12,9 @@ if (typeof process.env.PENPOT_FILE_ID !== 'string') {
 	throw new Error('Missing PENPOT_FILE_ID environment variable');
 }
 
+/**
+ * @type {import('@penpot-export/core').UserConfig}
+ */
 const config = {
 	instance: process.env.PENPOT_BASE_URL || undefined,
 	accessToken: process.env.PENPOT_ACCESS_TOKEN,
